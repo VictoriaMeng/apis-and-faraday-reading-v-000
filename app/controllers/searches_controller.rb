@@ -14,6 +14,7 @@ class SearchesController < ApplicationController
     if @resp.success?
       @venues = body["response"]["venues"]
     else
+      binding.pry
       @error = body["meta"]["errorDetail"]
     end
     render 'search'
